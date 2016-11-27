@@ -14,7 +14,8 @@ import java.util.PriorityQueue;
 
 public class PointDistance {
 
-	public static void main(String[] args) throws IOException, ClassNotFoundException {
+	public static void main(String[] args) throws IOException,
+			ClassNotFoundException {
 
 		Star star1 = new Star(2, 2, 3);
 		Star star2 = new Star(0, 0, 0);
@@ -40,20 +41,26 @@ public class PointDistance {
 		displayCloseStars(findClosestStars(3, oin));
 	}
 
+	static Double distance(Star star) {
+		if (star == null)
+			return 0.0;
+
+		return Math.sqrt(star.x * star.x + star.y * star.y + star.z * star.z);
+	}
+
 	public static List<Star> findClosestStars(int k, ObjectInputStream osin)
 			throws ClassNotFoundException, IOException {
-		
+
 		PriorityQueue<Star> maxHeap = new PriorityQueue<Star>(16,
 				new Comparator<Star>() {
 					@Override
 					public int compare(Star o1, Star o2) {
-						double dist1 = Math.sqrt(o1.x * o1.x + o1.y * o1.y
-								+ o1.z * o1.z);
-						double dist2 = Math.sqrt(o2.x * o2.x + o2.y * o2.y
-								+ o2.z * o2.z);
+						double dist1 = distance(o1);
+						double dist2 = distance(o2);
 						return Double.compare(dist2, dist1);
 					}
 				});
+
 		try {
 			while (true) {
 				Star star = (Star) osin.readObject();
