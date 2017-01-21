@@ -7,6 +7,7 @@ public class StringPalindrome {
 	public static void main(String[] args) {
 
 		try {
+			@SuppressWarnings("resource")
 			Scanner scn = new Scanner(System.in);
 			System.out.println("Enter a string to check if it is a palindrome");
 			String inputString = scn.nextLine();
