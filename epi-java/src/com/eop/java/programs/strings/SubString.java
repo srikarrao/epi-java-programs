@@ -37,7 +37,6 @@ public class SubString {
 					&& input.substring(i - sub.length(), i).equals(sub)) {
 				return i - sub.length();
 			}
-			System.out.println("Rolling hash");
 			inputHash -= (input.charAt(i - sub.length()) * PowerS) % kMod;
 			if (inputHash < 0) {
 				inputHash += kMod;
