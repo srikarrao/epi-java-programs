@@ -21,8 +21,7 @@ public class CircularQueue {
 	private void enqueue(int value) {
 
 		if (numOfElements == queue.length) {
-			head--;
-			Collections.rotate(Arrays.asList(queue), head);
+			// Collections.rotate(Arrays.asList(queue), -head);
 			head = 0;
 			tail = numOfElements;
 			queue = Arrays.copyOf(queue, numOfElements * SCALE_FACTOR);
@@ -58,16 +57,33 @@ public class CircularQueue {
 		cq.enqueue(3);
 		cq.display();
 		
-		System.out.println(cq.size());
 		cq.enqueue(4);
 		cq.display();
 		
-		System.out.println(cq.size());
 		System.out.println(cq.dequeue());
 		cq.display();
 		
 		cq.enqueue(5);
-		System.out.println(cq.size());
+		cq.display();
+		System.out.println(cq.dequeue());
+		
+		cq.enqueue(6);
+		cq.display();
+		System.out.println(cq.dequeue());
+		
+		cq.enqueue(7);
+		cq.display();
+		System.out.println(cq.dequeue());
+		
+		cq.enqueue(8);
+		cq.display();
+		System.out.println(cq.dequeue());
+		
+		cq.enqueue(9);
+		cq.display();
+		System.out.println(cq.dequeue());
+		
+		cq.enqueue(10);
 		cq.display();
 		System.out.println(cq.dequeue());
 	}
