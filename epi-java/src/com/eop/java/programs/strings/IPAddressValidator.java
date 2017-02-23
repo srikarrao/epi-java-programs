@@ -5,7 +5,7 @@ import java.util.List;
 
 public class IPAddressValidator {
 	public static void main(String[] args) {
-		System.out.println(getValidIPAddress("09216811"));
+		System.out.println(getValidIPAddress("09211111"));
 	}
 
 	public static List<String> getValidIPAddress(String s) {

@@ -5,7 +5,8 @@ import java.util.*;
 public class SkylineRectangle {
 
 	public static void main(String[] args) {
-		List<Integer> heights = Arrays.asList(1, 2, 1, 5);
+		// List<Integer> heights = Arrays.asList(1, 2, 1, 5);
+		List<Integer> heights = Arrays.asList(10, 4, 5, 10, 7, 11, 9);
 		System.out.println(getArea(heights));
 	}
 

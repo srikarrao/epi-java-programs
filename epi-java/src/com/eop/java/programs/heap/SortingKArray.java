@@ -46,7 +46,7 @@ public class SortingKArray {
 		}
 		while (!minHeap.isEmpty()) {
 			Integer smallElement = minHeap.poll();
-			System.out.print(smallElement + " ");
+			System.out.print(smallElement + ",");
 		}
 	}
 }

@@ -53,7 +53,6 @@ public class InterConvert {
 
 	public static int convertStringToInt(String stringTypeNum) {
 		int result = 0;
-		System.out.println( "shit"+ stringTypeNum.charAt(0));
 		for (int i = stringTypeNum.charAt(0) == '-' ? 1 : 0; i < stringTypeNum
 				.length(); i++) {
 			int number = stringTypeNum.charAt(i) - '0';

@@ -1,6 +1,6 @@
 package com.eop.java.programs.strings;
 
-public class SubString {
+public class RabinKarpSubString {
 
 	private static int kBase = 26, kMod = 997;
 

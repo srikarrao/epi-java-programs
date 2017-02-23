@@ -13,7 +13,12 @@ import java.util.LinkedList;
  */
 public class NormalizedPathNames {
 	public static void main(String[] args) throws IllegalAccessException {
+		System.out.println(shortestEquivalentPath("/x/y/."));
 		System.out.println(shortestEquivalentPath("/x/y/.."));
+		System.out.println(shortestEquivalentPath("/x/y/"));
+		System.out.println(shortestEquivalentPath("/."));
+		System.out.println(shortestEquivalentPath(".."));
+		System.out.println(shortestEquivalentPath("/x/y/../."));
 	}
 
 	/**
