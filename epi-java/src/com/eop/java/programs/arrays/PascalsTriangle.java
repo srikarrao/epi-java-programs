@@ -1,52 +1,39 @@
 package com.eop.java.programs.arrays;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class PascalsTriangle {
 
-	public static int[] pascalArray;
-
 	public static void main(String[] args) {
-
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter the number of rows for Pascal's triangle");
-		try {
-			Integer x = sc.nextInt();
-			if ((x > 1)) {
-				int[] pascalArray2 = new int[x];
-				pascalArray = pascalArray2;
-
-				System.out.println("Creating Pascal's triangle");
-				System.out
-						.println("Enter the first number of Pascal's triangle");
-				pascalArray[0] = sc.nextInt();
-				System.out.println("Displaying Pascal's triangle");
-				System.out.print(pascalArray[0] + " ");
-				createPascalTriangle();
-			} else {
-				System.out.println("Rows should be more than 1 ");
-			}
-		} catch (Exception e) {
-			System.out
-					.println("Invalid input:: Give correct input value (number only) "
-							+ e);
-		}
+		displayPascalTriangle(generate(10));
 	}
 
-	public static void createPascalTriangle() {
-		for (int i = 1; i < pascalArray.length; i++) {
+	public static List<List<Integer>> generate(int numRows) {
+		List<List<Integer>> triangle = new ArrayList<List<Integer>>();
+		if (numRows <= 0) {
+			return triangle;
+		}
+		for (int i = 0; i < numRows; i++) {
+			List<Integer> row = new ArrayList<Integer>();
+			for (int j = 0; j < i + 1; j++) {
+				if (j == 0 || j == i) {
+					row.add(1);
+				} else {
+					row.add(triangle.get(i - 1).get(j - 1)
+							+ triangle.get(i - 1).get(j));
+				}
+			}
+			triangle.add(row);
+		}
+		return triangle;
+	}
+
+	public static void displayPascalTriangle(List<List<Integer>> pascalTriangle) {
+		for (List<Integer> list : pascalTriangle) {
+			for (Integer i : list) {
+				System.out.print(i + " ");
+			}
 			System.out.println();
-			pascalArray[i] = pascalArray[i - 1];
-			for (int j = i; j > 1; j--) {
-				pascalArray[j - 1] = pascalArray[j - 2] + pascalArray[j - 1];
-			}
-			displayPascalTriangle(i);
-		}
-	}
-
-	public static void displayPascalTriangle(int x) {
-		for (int i = 0; i <= x; i++) {
-			System.out.print(pascalArray[i] + " ");
 		}
 	}
 }
