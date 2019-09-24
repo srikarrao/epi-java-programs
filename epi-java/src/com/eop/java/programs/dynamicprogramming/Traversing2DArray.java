@@ -1,4 +1,4 @@
-package com.programs.poc.com.eop.java.programs.dynamicprogramming;
+package com.eop.java.programs.dynamicprogramming;
 
 import java.util.ArrayList;
 import java.util.Collections;
