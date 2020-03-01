@@ -21,8 +21,6 @@ public class FirstNameDuplicate {
 		Name n2 = new Name();
 		Name n3 = new Name();
 		Name n4 = new Name();
-		Name n5 = new Name();
-		Name n6 = new Name();
 
 		/**
 		 * Assigning values to the name instance variables
@@ -35,10 +33,6 @@ public class FirstNameDuplicate {
 		n3.lName = "Bell";
 		n4.fName = "Ian";
 		n4.lName = "Chappel";
-		n5.fName = "Zan";
-		n5.lName = "Chappel";
-		n6.fName = "Yank";
-		n6.lName = "Franm";
 
 		/**
 		 * adding name objects as elements to the list
@@ -47,8 +41,6 @@ public class FirstNameDuplicate {
 		duplicateList.add(n2);
 		duplicateList.add(n3);
 		duplicateList.add(n4);
-		duplicateList.add(n5);
-		duplicateList.add(n6);
 		// invoking the eliminate duplicates method
 		eliminateDuplicates(duplicateList);
 	}
@@ -65,14 +57,6 @@ public class FirstNameDuplicate {
 		Collections.sort(duplicateList);
 
 		/**
-		 * Print the elements in the list before eliminating duplicates
-		 */
-		for (int i = 0; i < duplicateList.size(); i++) {
-			System.out.println("(" + duplicateList.get(i).fName + ","
-					+ duplicateList.get(i).lName + ")");
-		}
-
-		/**
 		 * Logic to remove duplicates
 		 */
 		for (int i = 1; i < duplicateList.size(); i++) {
@@ -84,7 +68,8 @@ public class FirstNameDuplicate {
 		}
 
 		// clear the remaining list
-		duplicateList.subList(++x, duplicateList.size()).clear();
+		x++;
+		duplicateList.subList(x, duplicateList.size()).clear();
 
 		/**
 		 * Print the elements in the list after eliminating duplicates
