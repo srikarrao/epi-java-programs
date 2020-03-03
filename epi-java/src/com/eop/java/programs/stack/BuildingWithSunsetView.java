@@ -88,6 +88,8 @@ public class BuildingWithSunsetView {
 				buildings.addLast(new BuildingWithSunsetView(bIndx++, bHeight));
 			}
 		} catch (EOFException eof) {
+		}finally {
+			input.close();
 		}
 		return buildings;
 	}
